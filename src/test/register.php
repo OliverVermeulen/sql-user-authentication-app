@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "/MAMP/htdocs/sql-user-authentication-app/src/test/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Attempt to execute the prepared statement
             if (mysqli_stmt_execute($stmt)) {
                 // Redirect to login page
-                header("location: login.php");
+                header("location: /sql-user-authentication-app/login");
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -94,44 +94,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($link);
 }
 ?>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
-</head>
-
-<body>
-    <main>
-        <div class="wrapper">
-            <h2>Sign Up</h2>
-            <p>Please fill this form to create an account.</p>
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <label>Confirm Password</label>
-                    <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                    <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-secondary ml-2" value="Reset">
-                </div>
-                <p>Already have an account? <a href="login.php">Login here</a>.</p>
-            </form>
-        </div>
-    </main>
-</body>
-
-</html>
+<main>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <p>Please fill this form to create an account.</p>
+        <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" name="username" class="form-control <?= (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?= $username; ?>">
+                <span class="invalid-feedback"><?= $username_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" name="password" class="form-control <?= (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?= $password; ?>">
+                <span class="invalid-feedback"><?= $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control <?= (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?= $confirm_password; ?>">
+                <span class="invalid-feedback"><?= $confirm_password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Submit">
+                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+            </div>
+            <p>Already have an account? <a href="/sql-user-authentication-app/login">Login here</a>.</p>
+        </form>
+    </div>
+</main>

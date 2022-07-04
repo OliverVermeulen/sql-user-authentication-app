@@ -117,6 +117,7 @@ footer span {
 
 a {
   color: #ff1c30;
+  text-decoration: none;
 }
 a:hover {
   color: #dc3545;
@@ -124,6 +125,7 @@ a:hover {
 }
 .btn-link {
   color: #ff1c30;
+  text-decoration: none;
 }
 .btn-link:hover {
   color: #dc3545;
