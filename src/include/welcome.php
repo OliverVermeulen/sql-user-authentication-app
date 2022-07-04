@@ -27,11 +27,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
-<?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php");?>
+    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex unde ut eum quos. Quibusdam eum qui esse error quo voluptatibus, inventore debitis, dolorem molestias saepe harum. Pariatur mollitia tempora sint. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim culpa qui similique maxime fugiat dolores excepturi quibusdam aperiam sed, reiciendis facilis. Inventore pariatur magni quaerat neque rerum accusamus fugiat quidem.
 
-    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php");?>
+    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
 
 </html>
