@@ -27,29 +27,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
-    <!-- Header Module -->
-    <header class="header">
-        <!-- Website Logo -->
-        <a href=""><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
+<?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php");?>
 
-        <!-- Search Bar -->
-        <form action="" method="post">
-            <input type="search" name="" id="" placeholder="Search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            <i class="fa fa-magnifying-glass"></i>
-        </form>
-
-        <!-- Sign Out and Change Password Dropdown -->
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a><?php echo htmlspecialchars($_SESSION["username"]); ?></a>
-                <a href="logout.php">Sign Out of Your Account</a>
-                <a href="reset-password.php">Reset Your Password</a>
-            </div>
-        </div>
-    </header>
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex unde ut eum quos. Quibusdam eum qui esse error quo voluptatibus, inventore debitis, dolorem molestias saepe harum. Pariatur mollitia tempora sint. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim culpa qui similique maxime fugiat dolores excepturi quibusdam aperiam sed, reiciendis facilis. Inventore pariatur magni quaerat neque rerum accusamus fugiat quidem.
+
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php");?>
 </body>
 

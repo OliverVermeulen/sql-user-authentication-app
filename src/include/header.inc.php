@@ -14,9 +14,9 @@
     <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
-            <a href="#">OLIVER</a>
-            <a href="#">SIGN OUT</a>
-            <a href="#">CHANGE PASSWORD</a>
+            <a><?= htmlspecialchars($_SESSION["username"]); ?></a>
+            <a href="logout.php">Sign Out of Your Account</a>
+            <a href="reset-password.php">Reset Your Password</a>
         </div>
     </div>
 </header>
