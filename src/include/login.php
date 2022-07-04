@@ -1,7 +1,4 @@
 <?php
-// Initialize the session
-// session_start();
-
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: /sql-user-authentication-app/welcome");
@@ -9,7 +6,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 }
 
 // Include config file
-require_once "config.php";
+require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -95,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
+    <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
 </head>
 
 <body>
@@ -103,11 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
 
-        <?php
-        if (!empty($login_err)) {
+        <?php if (!empty($login_err)) {
             echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }
-        ?>
+        } ?>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
@@ -123,7 +118,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+            <p>Don't have an account? <a href="/sql-user-authentication-app/register">Sign up now</a>.</p>
         </form>
     </div>
 </body>
