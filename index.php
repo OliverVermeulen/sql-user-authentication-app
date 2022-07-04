@@ -12,7 +12,7 @@ session_start();
     <title>Library</title>
     <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
     <link rel="shortcut icon" href="/sql-user-authentication-app/src/images/icon.png" type="image/x-icon">
-    <script src="https://kit.fontawesome.com/e4ad388285.js" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/e4ad388285.js" crossorigin="anonymous"></script>
     <script src="/php-oop-booking-app/src/js/script.js" defer></script>
 </head>
 
@@ -22,12 +22,36 @@ session_start();
         <!-- Website Logo -->
         <a href="/sql-user-authentication-app/"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
 
-        <!-- Social Media -->
-        <div class="social-media">
-            <a href="https://www.linkedin.com/in/oliver-vermeulen-311221222/" target="_blank" class="media-icon" title="Linkedin"><i class="fa fa-linkedin-square" alt="Linkedin"></i></a>
-            <a href="https://github.com/OliverVermeulen" target="_blank" class="media-icon" title="GitHub"><i class="fa fa-github-square" alt="GitHub"></i></a>
+        <form action="" method="post">
+            <input type="search" name="" id="" placeholder="Search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+            <i class="fa fa-magnifying-glass"></i>
+        </form>
+
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a href="#">OLIVER</a>
+                <a href="#">SIGN OUT</a>
+                <a href="#">CHANGE PASSWORD</a>
+            </div>
         </div>
     </header>
+
+    <!-- Footer module -->
+    <footer class="footer">
+        <!-- Trademarks -->
+        <div class="trademarks">
+            <span>© 2022 Library,Inc.</span>
+            <span>|</span>
+            <span>© 2022 Viswinkel,Inc.</span>
+        </div>
+
+        <!-- Extra Information -->
+        <div div="extra-information">
+            <span>Help <i class="fa fa-gear"></i></span>
+        </div>
+    </footer>
 </body>
 
 </html>
