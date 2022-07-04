@@ -79,3 +79,52 @@ footer {
 footer span {
   color: #ff1c30;
 }
+
+.wrapper {
+  width: 360px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgb(212 212 212);
+}
+
+.invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.btn-primary {
+  background-color: #ff1c30;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.btn-primary:hover {
+  background-color: #ff5261;
+}
+.btn-secondary {
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+a {
+  color: #ff1c30;
+}
+a:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
+.btn-link {
+  color: #ff1c30;
+}
+.btn-link:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
