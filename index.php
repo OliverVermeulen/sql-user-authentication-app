@@ -17,41 +17,40 @@ session_start();
 </head>
 
 <body>
-    <!-- Header Module -->
-    <header class="header">
-        <!-- Website Logo -->
-        <a href="/sql-user-authentication-app/"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
+    <?php
+    // Header
+    include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php");
 
-        <form action="" method="post">
-            <input type="search" name="" id="" placeholder="Search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-            <i class="fa fa-magnifying-glass"></i>
-        </form>
+    // Switch Router
+    // $request = $_SERVER['REQUEST_URI'];
+    // $basepath = "sql-user-authentication-app/";
+    // $request = str_replace($basepath, "", $request);
+    // $request = strtok($request, '?');
+    // switch ($request) {
+    //     case '/':
+    //         require __DIR__ . '/src/include/login.php';
+    //         break;
+    //     case '':
+    //         require __DIR__ . '/src/include/login.php';
+    //         break;
+    //     case '/login':
+    //         require __DIR__ . '/src/include/login.php';
+    //         break;
+    //     case '/register':
+    //         require __DIR__ . '/src/include/register.php';
+    //         break;
+    //         case '/welcome':
+    //             require __DIR__ . '/src/include/welcome.php';
+    //             break;
+    //     default:
+    //         http_response_code(404);
+    //         echo "page not found";
+    //         break;
+    // };
 
-        <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-                <a href="#">OLIVER</a>
-                <a href="#">SIGN OUT</a>
-                <a href="#">CHANGE PASSWORD</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Footer module -->
-    <footer class="footer">
-        <!-- Trademarks -->
-        <div class="trademarks">
-            <span>© 2022 Library,Inc.</span>
-            <span>|</span>
-            <span>© 2022 Viswinkel,Inc.</span>
-        </div>
-
-        <!-- Extra Information -->
-        <div div="extra-information">
-            <span>Help <i class="fa fa-gear"></i></span>
-        </div>
-    </footer>
+    // Footer
+    include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php");
+    ?>
 </body>
 
 </html>
