@@ -20,7 +20,7 @@ session_start();
     <!-- Header Module -->
     <header class="header">
         <!-- Website Logo -->
-        <a href="/sql-user-authentication-app/"><img src="/sql-user-authentication-app/src/images/airdnd.png" alt="Airdnd logo" class="logo" title="Home"></a>
+        <a href="/sql-user-authentication-app/"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
 
         <!-- Social Media -->
         <div class="social-media">
