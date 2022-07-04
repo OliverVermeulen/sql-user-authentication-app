@@ -84,7 +84,7 @@ footer span {
 .wrapper {
   width: 360px;
   padding: 20px;
-  margin: 0 auto;
+  margin: auto;
   border: 1px solid lightgray;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgb(212 212 212);
