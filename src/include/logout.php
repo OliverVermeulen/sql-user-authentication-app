@@ -9,6 +9,6 @@ $_SESSION = array();
 session_destroy();
  
 // Redirect to login page
-header("location: login.php");
+header("location: /sql-user-authentication-app/");
 exit;
 ?>
