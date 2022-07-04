@@ -1,3 +1,4 @@
+
 <?php
 // Include config file
 require_once "/MAMP/htdocs/sql-user-authentication-app/src/test/config.php";

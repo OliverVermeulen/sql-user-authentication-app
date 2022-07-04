@@ -41,6 +41,9 @@ session_start();
         case '/register':
             require __DIR__ . '/src/test/register.php';
             break;
+            case '/welcome':
+                require __DIR__ . '/src/test/welcome.php';
+                break;
         default:
             http_response_code(404);
             echo "page not found";
