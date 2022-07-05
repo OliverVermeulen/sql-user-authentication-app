@@ -1,7 +1,7 @@
 <!-- Header Module -->
 <header class="header">
     <!-- Website Logo -->
-    <a href="./welcome.php"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
+    <a href="#"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
 
     <!-- Search Bar -->
     <form action="" method="post">
@@ -15,8 +15,8 @@
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
             <a><?= htmlspecialchars($_SESSION["username"]); ?></a>
-            <a href="logout.php">Sign Out of Your Account</a>
-            <a href="reset-password.php">Reset Your Password</a>
+            <a href="/sql-user-authentication-app/src/include/logout.php">Sign Out of Your Account</a>
+            <a href="/sql-user-authentication-app/src/include/reset-password.php">Reset Your Password</a>
         </div>
     </div>
 </header>
