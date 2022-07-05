@@ -28,7 +28,15 @@ header .logo {
   max-width: 120px;
   height: auto;
 }
-.dropbtn {
+header .img-thumbnail {
+  padding: 0;
+  border: 0;
+}
+header .btn-primary {
+  background-color: #ff1c30;
+  border: none;
+}
+header .dropbtn {
   background-color: #ff1c30;
   color: white;
   padding: 10px;
@@ -39,31 +47,31 @@ header .logo {
   font-weight: 600;
   transition: 0.5s;
 }
-.dropdown {
+header .dropdown {
   position: relative;
   display: inline-block;
 }
-.dropdown-content {
+header .dropdown-content {
   display: none;
   position: absolute;
   background-color: rgb(231, 231, 231);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  min-width: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
-.dropdown-content a {
+header .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-.dropdown-content a:hover {
+header .dropdown-content a:hover {
   background-color: rgb(218, 218, 218);
 }
-.dropdown:hover .dropdown-content {
+header .dropdown:hover .dropdown-content {
   display: block;
 }
-.dropdown:hover .dropbtn {
+header .dropdown:hover .dropbtn {
   background-color: #ff5261;
 }
 
@@ -83,38 +91,39 @@ footer span {
 
 .wrapper {
   width: 360px;
-  padding: 20px;
+  padding: 10px 20px;
   margin: auto;
   border: 1px solid lightgray;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgb(212 212 212);
 }
-
-.invalid-feedback {
+.wrapper .invalid-feedback {
   display: none;
   width: 100%;
   margin-top: 0.25rem;
   font-size: 80%;
   color: #dc3545;
 }
-
-.btn-primary {
+.wrapper .btn-primary {
   background-color: #ff1c30;
+  --bs-btn-focus-shadow-rgb: transparent;
   border: none;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
+  margin-top: 10px;
 }
-.btn-primary:hover {
+.wrapper .btn-primary:hover {
   background-color: #ff5261;
 }
-.btn-secondary {
+.wrapper .btn-secondary {
+  --bs-btn-focus-shadow-rgb: transparent;
   border: none;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
+  margin-top: 10px;
 }
-
 a {
   color: #ff1c30;
   text-decoration: none;
