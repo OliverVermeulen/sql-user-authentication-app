@@ -1,7 +1,7 @@
 <!-- Header Module -->
 <header class="header">
     <!-- Website Logo -->
-    <a href="#"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
+    <a href="/sql-user-authentication-app/index.php"><img src="/sql-user-authentication-app/src/images/Untitled-removebg-preview.png" alt="Airdnd logo" class="logo" title="Home"></a>
 
     <!-- Search Bar -->
     <form action="" method="post">
