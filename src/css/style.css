@@ -33,8 +33,12 @@ header .img-thumbnail {
   border: 0;
 }
 header .btn-primary {
+  --bs-btn-focus-shadow-rgb: transparent;
   background-color: #ff1c30;
   border: none;
+}
+header .btn-primary:hover {
+  background-color: #ff5261;
 }
 header .dropbtn {
   background-color: #ff1c30;
@@ -67,6 +71,7 @@ header .dropdown-content a {
 }
 header .dropdown-content a:hover {
   background-color: rgb(218, 218, 218);
+  text-decoration: underline;
 }
 header .dropdown:hover .dropdown-content {
   display: block;
@@ -88,7 +93,7 @@ footer span {
   color: #ff1c30;
 }
 
-
+/* Sign In, Register and Change Password */
 .wrapper {
   width: 360px;
   padding: 10px 20px;

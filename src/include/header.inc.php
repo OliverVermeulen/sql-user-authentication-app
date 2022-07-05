@@ -18,8 +18,8 @@
         <button class="dropbtn">Dropdown</button>
         <div class="dropdown-content">
             <a title="username"><?= htmlspecialchars($_SESSION["username"]); ?></a>
-            <a href="/sql-user-authentication-app/src/include/logout.php" title="Sign Out">Sign Out</a>
-            <a href="/sql-user-authentication-app/src/include/reset-password.php" title="Reset Password">Reset Password</a>
+            <a href="/sql-user-authentication-app/src/pages/logout.php" title="Sign Out">Sign Out</a>
+            <a href="/sql-user-authentication-app/src/pages/reset-password.php" title="Reset Password">Reset Password</a>
         </div>
     </div>
 </header>
