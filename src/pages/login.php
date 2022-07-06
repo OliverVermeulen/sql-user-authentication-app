@@ -96,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The aim of this project is to make a OOP based booking app in PHP">
-    <title>Login</title>
+    <title>Sign In</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
     <link rel="shortcut icon" href="/sql-user-authentication-app/src/images/icon.png" type="image/x-icon">
@@ -108,8 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <main>
         <div class="wrapper">
-            <h2>Login</h2>
-            <p>Please fill in your credentials to login.</p>
+            <h2>Sign In</h2>
+            <p>Please fill in your credentials</p>
 
             <?php
             if (!empty($login_err)) {
@@ -131,8 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Login">
                 </div>
-                <p>Don't have an account? <a href="/sql-user-authentication-app/src/pages/register.php">Sign up now</a>.</p>
-                <p>Sign in as <a href="/sql-user-authentication-app/src/pages/librarian.php">Admin</a>.</p>
+                <p>Don't have an account? <a href="/sql-user-authentication-app/src/pages/register.php">Sign up now</a></p>
+                <p>Sign In as <a href="/sql-user-authentication-app/src/librarian/librarian.php">Admin</a></p>
             </form>
         </div>
     </main>

@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+// Checks if the user is logged in, if not it redirects them to the login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: location: /sql-user-authentication-app/src/pages/login.php");
     exit;
@@ -27,10 +27,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
+    <!-- Librarian Header Module -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/librarian-header.inc.php"); ?>
 
-This is the librarians only page
+    This is the librarians only page
 
+    <!-- Footer Module -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
 

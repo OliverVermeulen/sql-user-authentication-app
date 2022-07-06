@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 // Checks if user is logged in as a librarian and redirects them to the librarian control panel
 if ($_SESSION["username"] == "Librarian") {
-    header("location: /sql-user-authentication-app/src/pages/librarian-dashboard.php");
+    header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
 }
 ?>
 
