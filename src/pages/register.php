@@ -125,10 +125,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
                 </div>
                 <div class="form-group">
-                    <input class="form-check-input" type="radio" name="librarian" <?php if (isset($librarian) && $librarian == "Yes") echo "checked"; ?> value="Yes">Yes
-                    <input class="form-check-input" type="radio" name="librarian" <?php if (isset($librarian) && $librarian == "No") echo "checked"; ?> value="No">No
-                </div>
-                <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-secondary ml-2" value="Reset">
                 </div>
