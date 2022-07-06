@@ -7,6 +7,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: /sql-user-authentication-app/src/pages/login.php");
     exit;
 }
+// Checks if user is logged in as a librarian and redirects them to the librarian control panel
+if ($_SESSION["username"] == "Librarian") {
+    header("location: /sql-user-authentication-app/src/pages/librarian-dashboard.php");
+}
 ?>
 
 <!DOCTYPE html>

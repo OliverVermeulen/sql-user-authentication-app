@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: location: /sql-user-authentication-app/src/pages/librarian-dashboard.php");
+    header("location: location: /sql-user-authentication-app/src/pages/login.php");
     exit;
 }
 ?>
@@ -27,7 +27,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
-    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
+    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/librarian-header.inc.php"); ?>
 
 This is the librarians only page
 
