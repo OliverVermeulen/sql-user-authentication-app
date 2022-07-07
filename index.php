@@ -33,7 +33,62 @@ if ($_SESSION["username"] == "Librarian") {
 <body>
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex unde ut eum quos. Quibusdam eum qui esse error quo voluptatibus, inventore debitis, dolorem molestias saepe harum. Pariatur mollitia tempora sint. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim culpa qui similique maxime fugiat dolores excepturi quibusdam aperiam sed, reiciendis facilis. Inventore pariatur magni quaerat neque rerum accusamus fugiat quidem.
+    <div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mt-5 mb-3 clearfix">
+                        <h2 class="pull-left">Employees Details</h2>
+                    </div>
+                    <?php
+                    // Include config file
+                    require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
+
+                    // Attempt select query execution
+                    $sql = "SELECT * FROM books";
+                    if ($result = $link->query($sql)) {
+                        if ($result->num_rows > 0) {
+                            echo '<table class="table table-bordered table-striped">';
+                            echo "<thead>";
+                            echo "<tr>";
+                            // echo "<th>#</th>";
+                            echo "<th>Book Name</th>";
+                            echo "<th>Release Year</th>";
+                            echo "<th>Book Genre</th>";
+                            echo "<th>Age Group</th>";
+                            echo "<th>Action</th>";
+                            echo "</tr>";
+                            echo "</thead>";
+                            echo "<tbody>";
+                            while ($row = $result->fetch_array()) {
+                                echo "<tr>";
+                                // echo "<td>" . $row['book_id'] . "</td>";
+                                echo "<td>" . $row['book_name'] . "</td>";
+                                echo "<td>" . $row['release_year'] . "</td>";
+                                echo "<td>" . $row['book_genre'] . "</td>";
+                                echo "<td>" . $row['age_group'] . "</td>";
+                                echo "<td>";
+                                echo '<a href="read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</tbody>";
+                            echo "</table>";
+                            // Free result set
+                            $result->free();
+                        } else {
+                            echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+                        }
+                    } else {
+                        echo "Oops! Something went wrong. Please try again later.";
+                    }
+                    // Close connection
+                    $link->close();
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
