@@ -83,11 +83,22 @@ header .dropdown:hover .dropbtn {
 main {
   padding: 20px 200px;
 }
+.action-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .table {
   margin-bottom: 0;
 }
-.table-actions {
-  text-align: center;
+.fa-trash {
+  color: red;
+}
+.fa-pencil {
+  color: green;
+}
+.fa-eye {
+  color: blue;
 }
 
 /* Footer */
@@ -111,6 +122,7 @@ footer span {
   border: 1px solid lightgray;
   border-radius: 20px;
   box-shadow: 2px 2px 5px rgb(212 212 212);
+  margin-top: 2rem;
 }
 .wrapper .invalid-feedback {
   display: none;
