@@ -80,6 +80,16 @@ header .dropdown:hover .dropbtn {
   background-color: #ff5261;
 }
 
+main {
+  padding: 20px 200px;
+}
+.table {
+  margin-bottom: 0;
+}
+.table-actions {
+  text-align: center;
+}
+
 /* Footer */
 footer {
   display: flex;

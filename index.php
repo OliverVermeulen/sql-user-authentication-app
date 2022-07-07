@@ -33,13 +33,11 @@ if ($_SESSION["username"] == "Librarian") {
 <body>
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
-    <div class="wrapper">
+    <main>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mt-5 mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
-                    </div>
+                        <h2 class="pull-left">Book Details</h2>
                     <?php
                     // Include config file
                     require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
@@ -65,7 +63,7 @@ if ($_SESSION["username"] == "Librarian") {
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
-                                echo "<td>";
+                                echo "<td class='table-actions'>";
                                 echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
@@ -86,7 +84,7 @@ if ($_SESSION["username"] == "Librarian") {
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
