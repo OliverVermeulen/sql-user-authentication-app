@@ -58,7 +58,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The aim of this project is to make a OOP based booking app in PHP">
-    <title>Add new book</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
     <link rel="shortcut icon" href="/sql-user-authentication-app/src/images/icon.png" type="image/x-icon">
@@ -72,7 +72,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="mb-3">View Record</h1>
+                    <h1 class="mb-3">Book details</h1>
                     <div class="form-group">
                         <label>Book Name</label>
                         <p><b><?php echo $row["book_name"]; ?></b></p>
