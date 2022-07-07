@@ -3,7 +3,7 @@
 require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
 // Define variables and initialize with empty values
-$book_name = $release_year = $book_genre = $age_group = $book_id = "";
+$book_name = $release_year = $book_genre = $age_group = $author_id = "";
 $book_name_err = $release_year_err = $book_genre_err = $age_group_err = "";
 
 // Processing form data when form is submitted
@@ -40,14 +40,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $age_group = $input_age_group;
     }
 
-    // Validate book_id
-    $input_book_id = trim($_POST["book_id"]);
-    $book_id = $input_book_id;
+    // Validate author_id
+    $input_author_id = trim($_POST["author_id"]);
+    $author_id = $input_author_id;
 
     // Check input errors before inserting in database
     if (empty($book_name_err) && empty($release_year_err) && empty($book_genre_err) && empty($book_genre_err)) {
         // Prepare an insert statement
-        $query = "INSERT INTO books(book_name, release_year, book_genre, age_group, book_id) VALUES ('$book_name','$release_year','$book_genre','$age_group','$book_id')";
+        $query = "INSERT INTO books(book_name, release_year, book_genre, age_group, author_id) VALUES ('$book_name','$release_year','$book_genre','$age_group','$author_id')";
         // Inserts into books table
         $result = mysqli_query($link, $query);
         // redirects user to home page
@@ -102,12 +102,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="form-group">
                             <label>Author</label>
-                            <select name="book_id" class="form-control" required>
+                            <select name="author_id" class="form-control" required>
                                 <?php
                                 $sql = "SELECT * FROM authors";
                                 if ($result = $link->query($sql)) {
                                     while ($row = $result->fetch_array()) {
-                                        echo "<option value='$row[book_id]'>" . $row['author_name'] . "</option>";
+                                        echo "<option value='$row[author_id]'>" . $row['author_name'] . "</option>";
                                     }
                                     $result->free();
                                 } ?>

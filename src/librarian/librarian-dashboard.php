@@ -34,9 +34,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mt-5 mb-3 clearfix">
+                    <div class="mb-3 clearfix">
                         <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        <a href="create.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
                     </div>
                     <?php
                     // Include config file
@@ -66,7 +66,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 echo "<td>";
                                 echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo '<a href="/sql-user-authentication-app/src/librarian/create.php?id=' . $row['book_id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
-                                echo '<a href="delete.php?id=' . $row['book_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/delete.php?id=' . $row['book_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }
