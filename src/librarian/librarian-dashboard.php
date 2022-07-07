@@ -64,7 +64,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td>";
-                                echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/librarian-read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo '<a href="/sql-user-authentication-app/src/librarian/create.php?id=' . $row['book_id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
                                 echo '<a href="/sql-user-authentication-app/src/librarian/delete.php?id=' . $row['book_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                 echo "</td>";
