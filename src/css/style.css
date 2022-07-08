@@ -91,6 +91,13 @@ main {
 .table {
   margin-bottom: 0;
 }
+main .btn-primary{
+  background-color: #ff1c30;
+  border: none;
+}
+main .btn-primary:hover{
+  background-color: #ff5261;
+}
 .fa-trash {
   color: red;
 }
@@ -166,4 +173,10 @@ a:hover {
 .btn-link:hover {
   color: #dc3545;
   text-decoration: underline;
+}
+
+.librarian-dashboard-actions  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

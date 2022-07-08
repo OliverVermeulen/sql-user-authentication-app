@@ -35,8 +35,25 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="mb-3 clearfix">
+                        <div class="librarian-dashboard-actions">
                         <h2 class="pull-left">Employees Details</h2>
-                        <a href="create.php" class="btn btn-secondary pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
+                        
+                            <a href="create.php" class="btn btn-secondary pull-right mb-3"><i class="fa fa-plus"></i> Add New Employee</a>
+                            <?php
+                            echo "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
+                            <div class='col-auto'>
+                            <select class='form-control' name='yeet'>
+                            <option value='alphabet'>Alphabet</option>
+                            <option value='year'>Year</option>
+                            <option value='genre'>Genre</option>
+                            </select>
+                            </div>
+                            <div class='col-auto'>
+                            <input type='submit' value='Sort' class='btn btn-primary mb-3'>
+                            </div>
+                            </form>";
+                            ?>
+                        </div>
                     </div>
                     <?php
                     // Include config file

@@ -47,15 +47,18 @@ if ($_SESSION["username"] == "Librarian") {
                     // Attempt select query execution
                     $sql = "SELECT * FROM books";
                     if ($result = $link->query($sql)) {
-                        $query= "SELECT * FROM books ORDER BY release_year";
-                        $result = mysqli_query($link, $query);
-                        echo "<form>
-                                <select class='form-control'>
-                                    <option>Alphabet</option>
-                                    <option>Author</option>
-                                    <option>Age</option>
+                        echo "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
+                                <div class='col-auto'>
+                                <select class='form-control' name='yeet'>
+                                    <option value='alphabet'>Alphabet</option>
+                                    <option value='year'>Year</option>
+                                    <option value='genre'>Genre</option>
                                 </select>
-                            </form>";
+                                </div>
+                                <div class='col-auto'>
+                                <input type='submit' value='Sort' class='btn btn-primary mb-3'>
+                                </div>
+                            </form>";                         
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
