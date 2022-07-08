@@ -68,7 +68,7 @@ if ($_SESSION["username"] == "Librarian") {
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td>";
-                                echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye">view</span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }

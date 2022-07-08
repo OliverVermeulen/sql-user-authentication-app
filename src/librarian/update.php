@@ -3,69 +3,52 @@
 require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
 // Define variables and initialize with empty values
-$name = $address = $salary = "";
-$name_err = $address_err = $salary_err = "";
+$book_name = $release_year = $book_genre = $age_group = $author_id = "";
+$book_name_err = $release_year_err = $book_genre_err = $age_group_err = "";
 
 // Processing form data when form is submitted
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     // Get hidden input value
     $id = $_POST["id"];
 
-    // Validate name
-    $input_name = trim($_POST["name"]);
-    if (empty($input_name)) {
-        $name_err = "Please enter a name.";
-    } elseif (!filter_var($input_name, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => "/^[a-zA-Z\s]+$/")))) {
-        $name_err = "Please enter a valid name.";
+    $input_book_name = trim($_POST["book_name"]);
+    if (empty($input_book_name)) {
+        $book_name_err = "Please enter a name.";
     } else {
-        $name = $input_name;
+        $book_name = $input_book_name;
     }
 
-    // Validate address address
-    $input_address = trim($_POST["address"]);
-    if (empty($input_address)) {
-        $address_err = "Please enter an address.";
+    // Validate release_year
+    $input_release_year = trim($_POST["release_year"]);
+    if (empty($input_release_year)) {
+        $release_year_err = "Please enter a name.";
     } else {
-        $address = $input_address;
+        $release_year = $input_release_year;
     }
 
-    // Validate salary
-    $input_salary = trim($_POST["salary"]);
-    if (empty($input_salary)) {
-        $salary_err = "Please enter the salary amount.";
-    } elseif (!ctype_digit($input_salary)) {
-        $salary_err = "Please enter a positive integer value.";
+    // Validate book_genre
+    $input_book_genre = trim($_POST["book_genre"]);
+    if (empty($input_book_genre)) {
+        $book_genre_err = "Please enter a name.";
     } else {
-        $salary = $input_salary;
+        $book_genre = $input_book_genre;
+    }
+
+    // Validate age_group
+    $input_age_group = trim($_POST["age_group"]);
+    if (empty($input_age_group)) {
+        $age_group_err = "Please enter a name.";
+    } else {
+        $age_group = $input_age_group;
     }
 
     // Check input errors before inserting in database
-    if (empty($name_err) && empty($address_err) && empty($salary_err)) {
+    if (empty($book_name_err) && empty($release_year_err) && empty($book_genre_err) && empty($book_genre_err) && empty($age_group_err)) {
         // Prepare an update statement
-        $sql = "UPDATE books SET name=?, address=?, salary=? WHERE book_id=?";
-
-        if ($stmt = $link->prepare($sql)) {
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("sssi", $param_name, $param_address, $param_salary, $param_id);
-
-            // Set parameters
-            $param_name = $name;
-            $param_address = $address;
-            $param_salary = $salary;
-            $param_id = $id;
-
-            // Attempt to execute the prepared statement
-            if ($stmt->execute()) {
-                // Records updated successfully. Redirect to landing page
-                header("location: index.php");
-                exit();
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-        }
-
-        // Close statement
-        $stmt->close();
+        $query = "UPDATE `books` SET `book_name` = '$book_name', `release_year` = '$release_year', `book_genre` = '$book_genre', `age_group` = '$age_group' WHERE `books`.`book_id` = $id";
+        $result = mysqli_query($link, $query);
+        // redirects user to home page
+        header("location: index.php");
     }
 
     // Close connection
@@ -95,9 +78,11 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $row = $result->fetch_array(MYSQLI_ASSOC);
 
                     // Retrieve individual field value
-                    $name = $row["name"];
-                    $address = $row["address"];
-                    $salary = $row["salary"];
+                    $book_name = $row["book_name"];
+                    $release_year = $row["release_year"];
+                    $book_genre = $row["book_genre"];
+                    $age_group = $row["age_group"];
+                    // $salary = $row["book_genre"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -145,19 +130,20 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     <p>Please edit the input values and submit to update the employee record.</p>
                     <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="post">
                         <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" name="name" class="form-control <?php echo (!empty($name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $name; ?>">
-                            <span class="invalid-feedback"><?php echo $name_err; ?></span>
+                            <label>Book Name</label>
+                            <input type="text" name="book_name" class="form-control" value="<?= $book_name; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label>Address</label>
-                            <textarea name="address" class="form-control <?php echo (!empty($address_err)) ? 'is-invalid' : ''; ?>"><?php echo $address; ?></textarea>
-                            <span class="invalid-feedback"><?php echo $address_err; ?></span>
+                            <label>Release Year</label>
+                            <input type="text" name="release_year" class="form-control" value="<?= $release_year; ?>" required>
                         </div>
                         <div class="form-group">
-                            <label>Salary</label>
-                            <input type="text" name="salary" class="form-control <?php echo (!empty($salary_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $salary; ?>">
-                            <span class="invalid-feedback"><?php echo $salary_err; ?></span>
+                            <label>Book Genre</label>
+                            <input type="text" name="book_genre" class="form-control" value="<?= $book_genre; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Age Group</label>
+                            <input type="text" name="age_group" class="form-control" value="<?= $age_group; ?>" required>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>" />
                         <input type="submit" class="btn btn-primary" value="Submit">
