@@ -28,7 +28,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
     <!-- Librarian Header Module -->
-    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/librarian-header.inc.php"); ?>
+    <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
     <main>
         <div class="container-fluid">
@@ -36,9 +36,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <div class="col-md-12">
                     <div class="mb-3 clearfix">
                         <div class="librarian-dashboard-actions">
-                            <h2 class="pull-left">Book Details</h2>
                             <a href="create.php" class="btn btn-secondary pull-right mb-3"><i class="fa fa-plus"></i> Add New Employee</a>
-                            
+                            <form action="/sql-user-authentication-app/src/librarian/librarian-search-display.php" method="get" class="row g-2">
+                                <div class="col-auto">
+                                    <input type="text" name="search" class="form-control" placeholder="Search" title="Search">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary mb-3" title="Submit"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
                             <?= "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
                                     <div class='col-auto'>
                                         <select class='form-control' name='yeet'>

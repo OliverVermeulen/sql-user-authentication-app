@@ -38,16 +38,13 @@ if ($_SESSION["username"] == "Librarian") {
             <div class="row">
                 <div class="col-md-12">
                     <div class="librarian-dashboard-actions">
-                        <div class="mb-3 clearfix">
-                            <h2 class="pull-left">Book Details</h2>
-                        </div>
                         <!-- Search Bar -->
                         <form action="/sql-user-authentication-app/src/pages/display.php" method="get" class="row g-2">
                             <div class="col-auto">
-                                <input type="text" name="search" class="form-control">
+                                <input type="text" name="search" class="form-control" placeholder="Search" title="Search">
                             </div>
                             <div class="col-auto">
-                                <button type="submit" class="btn btn-primary mb-3"><i class="fa fa-search"></i></button>
+                                <button type="submit" class="btn btn-primary mb-3" title="Submit"><i class="fa fa-search"></i></button>
                             </div>
                         </form>
                         <!-- Filter Dropdown -->

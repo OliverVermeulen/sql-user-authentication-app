@@ -10,10 +10,10 @@ The aim of this project is to make a user authentication and library management 
 2. The ability to search for a specific book or author
 3. The ability to sort data
 4. Librarian CRUD:
-    4.1 The ability to Create new books and authors
-    4.2 The ability to Read information about books and authors
-    4.3 The ability to Update information of books and authors
-    4.4 The ability to Delete books and authors
+    + The ability to Create new books and authors
+    + The ability to Read information about books and authors
+    + The ability to Update information of books and authors
+    + The ability to Delete books and authors
 
 
 ## MVP
@@ -39,4 +39,4 @@ The aim of this project is to make a user authentication and library management 
 
 ### Repo link
 
-https://github.com/OliverVermeulen/php-oop-booking-app.git
+https://github.com/OliverVermeulen/sql-user-authentication-app.git

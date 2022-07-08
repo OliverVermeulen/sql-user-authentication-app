@@ -2,14 +2,10 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+// Checks if the user is logged in, if not it redirects them to the login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: /sql-user-authentication-app/src/pages/login.php");
+    header("location: location: /sql-user-authentication-app/src/pages/login.php");
     exit;
-}
-// Checks if user is logged in as a librarian and redirects them to the librarian control panel
-if ($_SESSION["username"] == "Librarian") {
-    header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
 }
 ?>
 
@@ -21,7 +17,7 @@ if ($_SESSION["username"] == "Librarian") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The aim of this project is to make a OOP based booking app in PHP">
-    <title>Library</title>
+    <title>Books</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
     <link rel="shortcut icon" href="/sql-user-authentication-app/src/images/icon.png" type="image/x-icon">
@@ -31,6 +27,7 @@ if ($_SESSION["username"] == "Librarian") {
 </head>
 
 <body>
+    <!-- Librarian Header Module -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
     <main>
@@ -46,12 +43,11 @@ if ($_SESSION["username"] == "Librarian") {
                     if ($result = $link->query($sql)) {
                         $search = $_REQUEST["search"];
                         $query = "SELECT * from books where book_name like '%$search%'"; //search with a book name in the table book_info
-                        $result = mysqli_query($link,$query);                      
+                        $result = mysqli_query($link,$query);   
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
                             echo "<tr>";
-                            // echo "<th>#</th>";
                             echo "<th>Book Name</th>";
                             echo "<th>Release Year</th>";
                             echo "<th>Book Genre</th>";
@@ -62,13 +58,14 @@ if ($_SESSION["username"] == "Librarian") {
                             echo "<tbody>";
                             while ($row = $result->fetch_array()) {
                                 echo "<tr>";
-                                // echo "<td>" . $row['book_id'] . "</td>";
                                 echo "<td>" . $row['book_name'] . "</td>";
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
-                                echo "<td>";
-                                echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo "<td class='action-list'>";
+                                echo '<a href="/sql-user-authentication-app/src/librarian/librarian-read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/update.php?id=' . $row['book_id'] . '" class="mr-3" title="Update Record" data-toggle="tooltip"><span class="fa fa-pencil"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/delete.php?id=' . $row['book_id'] . '" title="Delete Record" data-toggle="tooltip"><span class="fa fa-trash"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }
@@ -90,6 +87,7 @@ if ($_SESSION["username"] == "Librarian") {
         </div>
     </main>
 
+    <!-- Footer Module -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
 
