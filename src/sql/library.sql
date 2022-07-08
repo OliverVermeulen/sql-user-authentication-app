@@ -1,29 +1,36 @@
 -- Adds in users table
-CREATE TABLE `users` (
-  `id` int(11) PRIMARY KEY AUTO_INCREMENT,
-  `username` varchar(50),
-  `password` varchar(255)
-);
+CREATE TABLE `library`.`users` ( 
+`id` INT NOT NULL AUTO_INCREMENT, 
+`username` VARCHAR(50) NOT NULL, 
+`password` TEXT NOT NULL, 
+`created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP, 
+PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
-
+CREATE TABLE `library`.`librarians` ( 
+`id` INT NOT NULL AUTO_INCREMENT , 
+`username` VARCHAR(30) NOT NULL , 
+`password` VARCHAR(30) NOT NULL , 
+PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
 
 -- Adds in books table
-CREATE TABLE `books` (
-  `book_id` int(11) PRIMARY KEY AUTO_INCREMENT,
-  `book_name` varchar(50),
-  `release_year` smallint(4),
-  `book_genre` varchar(50),
-  `age_group` varchar(50),
-  `author_id` int(11)
-);
+CREATE TABLE `library`.`books` (
+`book_id` int(11) PRIMARY KEY AUTO_INCREMENT,
+`book_name` varchar(50),
+`release_year` smallint(4),
+`book_genre` varchar(50),
+`age_group` varchar(50),
+`author_id` int(11)
+) ENGINE = InnoDB;
 
 -- Adds in authors table
-CREATE TABLE `authors` (
-  `author_name` varchar(50),
-  `author_age` varchar(10),
-  `author_genre` varchar(50),
-  `author_id` int(11) PRIMARY KEY AUTO_INCREMENT
-);
+CREATE TABLE `library`.`authors` (
+`author_name` varchar(50),
+`author_age` varchar(10),
+`author_genre` varchar(50),
+`author_id` int(11) PRIMARY KEY AUTO_INCREMENT
+) ENGINE = InnoDB;
 
 -- Links books and authors tables via foreign key
 ALTER TABLE `books` ADD FOREIGN KEY (`author_id`) REFERENCES `authors`(`author_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
