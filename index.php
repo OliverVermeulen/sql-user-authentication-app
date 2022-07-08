@@ -47,6 +47,15 @@ if ($_SESSION["username"] == "Librarian") {
                     // Attempt select query execution
                     $sql = "SELECT * FROM books";
                     if ($result = $link->query($sql)) {
+                        $query= "SELECT * FROM books ORDER BY release_year";
+                        $result = mysqli_query($link, $query);
+                        echo "<form>
+                                <select class='form-control'>
+                                    <option>Alphabet</option>
+                                    <option>Author</option>
+                                    <option>Age</option>
+                                </select>
+                            </form>";
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
