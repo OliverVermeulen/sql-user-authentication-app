@@ -35,6 +35,9 @@ CREATE TABLE `library`.`authors` (
 -- Links books and authors tables via foreign key
 ALTER TABLE `books` ADD FOREIGN KEY (`author_id`) REFERENCES `authors`(`author_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
+-- Adds record into librarians table
+INSERT INTO `librarians` (`id`, `username`, `password`) VALUES (NULL, 'librarian', 'librarian123')
+
 -- Adds records into authors table
 INSERT INTO `authors` (`author_name`, `author_age`, `author_genre`, `author_id`) VALUES ('Vikram Seth', '68', 'Poet', NULL), ('Abul-Fazl ibn Mubarak', 'deceased', 'Biographer', NULL), ('Phillip Zimbardo', '87', 'Psychologist', NULL), ('Jane Austin', 'deceased', 'Novelist', NULL), ('J.M Coetzee', '81', 'Novelist', NULL);
 
