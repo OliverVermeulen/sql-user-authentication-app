@@ -1,3 +1,5 @@
+-- Database: library
+
 -- Adds in users table
 CREATE TABLE `library`.`users` ( 
 `id` INT NOT NULL AUTO_INCREMENT, 
@@ -36,7 +38,7 @@ CREATE TABLE `library`.`authors` (
 ALTER TABLE `books` ADD FOREIGN KEY (`author_id`) REFERENCES `authors`(`author_id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 -- Adds record into librarians table
-INSERT INTO `librarians` (`id`, `username`, `password`) VALUES (NULL, 'librarian', 'librarian123')
+INSERT INTO `librarians` (`id`, `username`, `password`) VALUES (NULL, 'librarian', 'librarian123');
 
 -- Adds records into authors table
 INSERT INTO `authors` (`author_name`, `author_age`, `author_genre`, `author_id`) VALUES ('Vikram Seth', '68', 'Poet', NULL), ('Abul-Fazl ibn Mubarak', 'deceased', 'Biographer', NULL), ('Phillip Zimbardo', '87', 'Psychologist', NULL), ('Jane Austin', 'deceased', 'Novelist', NULL), ('J.M Coetzee', '81', 'Novelist', NULL);
@@ -59,4 +61,4 @@ INSERT INTO `books` (`book_id`, `book_name`, `release_year`, `book_genre`, `age_
 (NULL, 'Lady Susan', '1871', 'Novel', '20-99', '4'),
 (NULL, 'The Childhood of Jesus', '2013', 'Novel', '12-15', '5'),
 (NULL, 'The Schooldays of Jesus', '2016', 'Novel', '8-10', '5'),
-(NULL, 'The Death of Jesus', '2019', 'Novel', '12-17', '5')
+(NULL, 'The Death of Jesus', '2019', 'Novel', '12-17', '5');
