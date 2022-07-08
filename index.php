@@ -37,9 +37,34 @@ if ($_SESSION["username"] == "Librarian") {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="mb-3 clearfix">
-                        <h2 class="pull-left">Employees Details</h2>
+                    <div class="librarian-dashboard-actions">
+                        <div class="mb-3 clearfix">
+                            <h2 class="pull-left">Book Details</h2>
+                        </div>
+                        <!-- Search Bar -->
+                        <form action="/sql-user-authentication-app/src/pages/display.php" method="get" class="row g-2">
+                            <div class="col-auto">
+                                <input type="text" name="search" class="form-control">
+                            </div>
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-primary mb-3"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                        <!-- Filter Dropdown -->
+                        <?= "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
+                                <div class='col-auto'>
+                                    <select class='form-control' name='yeet'>
+                                    <option value='alphabet'>Alphabet</option>
+                                    <option value='year'>Year</option>
+                                    <option value='genre'>Genre</option>
+                                    </select>
+                                </div>
+                                <div class='col-auto'>
+                                    <input type='submit' value='Sort' class='btn btn-primary mb-3'>
+                                </div>
+                            </form>"; ?>
                     </div>
+
                     <?php
                     // Include config file
                     require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
@@ -47,18 +72,6 @@ if ($_SESSION["username"] == "Librarian") {
                     // Attempt select query execution
                     $sql = "SELECT * FROM books";
                     if ($result = $link->query($sql)) {
-                        echo "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
-                                <div class='col-auto'>
-                                <select class='form-control' name='yeet'>
-                                    <option value='alphabet'>Alphabet</option>
-                                    <option value='year'>Year</option>
-                                    <option value='genre'>Genre</option>
-                                </select>
-                                </div>
-                                <div class='col-auto'>
-                                <input type='submit' value='Sort' class='btn btn-primary mb-3'>
-                                </div>
-                            </form>";                         
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
