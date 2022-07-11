@@ -5,7 +5,7 @@
 
     <!-- Sign Out and Change Password Dropdown -->
     <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
+        <button class="dropbtn">Functions</button>
         <div class="dropdown-content">
             <a title="username"><?= htmlspecialchars($_SESSION["username"]); ?></a>
             <a href="/sql-user-authentication-app/src/pages/logout.php" title="Sign Out">Sign Out</a>

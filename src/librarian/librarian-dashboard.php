@@ -36,39 +36,48 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <div class="col-md-12">
                     <div class="mb-3 clearfix">
                         <div class="librarian-dashboard-actions">
+                            <!-- Create new book/author -->
                             <div>
-                                <a href="create-book.php" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus"></i> Add New Book</a>
-                                <a href="create-author.php" class="btn btn-secondary pull-right mb-3"><i class="fa fa-plus"></i> Add New Author</a>
+                                <a href="create-book.php" class="btn btn-primary pull-right mb-3" title="Add new book"><i class="fa fa-plus"></i> Book</a>
+                                <a href="create-author.php" class="btn btn-secondary pull-right mb-3" title="Add new author"><i class="fa fa-plus"></i> Author</a>
                             </div>
+                            <!-- Search Bar -->
                             <form action="/sql-user-authentication-app/src/librarian/librarian-search-display.php" method="get" class="row g-2">
                                 <div class="col-auto">
-                                    <input type="text" name="search" class="form-control" placeholder="Search" title="Search">
+                                    <input type="text" name="search" class="form-control" placeholder="Search" title="Search by Books and Authors">
                                 </div>
                                 <div class="col-auto">
                                     <button type="submit" class="btn btn-primary mb-3" title="Submit"><i class="fa fa-search"></i></button>
                                 </div>
                             </form>
-                            <?= "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
-                                    <div class='col-auto'>
-                                        <select class='form-control' name='yeet'>
-                                            <option value='alphabet'>Alphabet</option>
-                                            <option value='year'>Year</option>
-                                            <option value='genre'>Genre</option>
-                                        </select>
-                                    </div>
-                                    <div class='col-auto'>
-                                        <input type='submit' value='Sort' class='btn btn-primary mb-3'>
-                                    </div>
-                                </form>"; ?>
+                            <!-- Filter Form -->
+                            <form action="" method="post" class="row g-2">
+                                <div class="col-auto">
+                                    <select class="form-control" name="order" title="Sort By">
+                                        <option value="book_name" title="Title">Title</option>
+                                        <option value="author_id" title="Author">Author</option>
+                                        <option value="book_genre" title="Genre">Genre</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="submit" value="Sort" class="btn btn-primary mb-3" title="Submit selected">
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <?php
                     // Include config file
                     require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
-                    // Attempt select query execution
-                    $sql = "SELECT * FROM books";
-                    if ($result = $link->query($sql)) {
+                    // Gets selected value from sorting form
+                    $sort = @$_POST['order'];
+                    if (!empty($sort)) {
+                        $query = "SELECT * FROM books ORDER BY $sort ASC"; // If you Sort it with value of your  select options
+                    } else {
+                        $query = "SELECT * FROM books ORDER BY book_name ASC"; // Else if you do not pass any value from select option will return this
+                    };
+                    // Book information table
+                    if ($result = $link->query($query)) {
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";

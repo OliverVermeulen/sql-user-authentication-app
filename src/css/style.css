@@ -94,6 +94,7 @@ main {
 main .btn-primary{
   background-color: #ff1c30;
   border: none;
+  font-weight: 600;
 }
 main .btn-primary:hover{
   background-color: #ff5261;
@@ -145,6 +146,9 @@ footer span {
   font-size: 80%;
   color: #dc3545;
 }
+.wrapper p {
+  margin-bottom: 10px;
+}
 .wrapper .btn-primary {
   background-color: #ff1c30;
   --bs-btn-focus-shadow-rgb: transparent;
@@ -153,6 +157,7 @@ footer span {
   font-weight: 600;
   border-radius: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .wrapper .btn-primary:hover {
   background-color: #ff5261;
@@ -164,6 +169,7 @@ footer span {
   font-weight: 600;
   border-radius: 10px;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 a {
   color: #ff1c30;
