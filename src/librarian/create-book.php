@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate book_name
     $input_book_name = trim($_POST["book_name"]);
     if (empty($input_book_name)) {
-        $book_name_err = "Please enter a name.";
+        $book_name_err = "Please enter book name";
     } else {
         $book_name = $input_book_name;
     }
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate release_year
     $input_release_year = trim($_POST["release_year"]);
     if (empty($input_release_year)) {
-        $release_year_err = "Please enter a name.";
+        $release_year_err = "Please enter release year";
     } else {
         $release_year = $input_release_year;
     }
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate book_genre
     $input_book_genre = trim($_POST["book_genre"]);
     if (empty($input_book_genre)) {
-        $book_genre_err = "Please enter a name.";
+        $book_genre_err = "Please enter book genre";
     } else {
         $book_genre = $input_book_genre;
     }
@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate age_group
     $input_age_group = trim($_POST["age_group"]);
     if (empty($input_age_group)) {
-        $age_group_err = "Please enter a name.";
+        $age_group_err = "Please enter age group";
     } else {
         $age_group = $input_age_group;
     }
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_author_id = trim($_POST["author_id"]);
     $author_id = $input_author_id;
 
-    // Check input errors before inserting in database
+    // Check input errors before inserting into table
     if (empty($book_name_err) && empty($release_year_err) && empty($book_genre_err) && empty($book_genre_err)) {
         // Prepare an insert statement
         $query = "INSERT INTO books(book_name, release_year, book_genre, age_group, author_id) VALUES ('$book_name','$release_year','$book_genre','$age_group','$author_id')";
@@ -104,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label>Author</label>
                             <select name="author_id" class="form-control" required>
                                 <?php
+                                // Loops through authors table to get author name
                                 $sql = "SELECT * FROM authors";
                                 if ($result = $link->query($sql)) {
                                     while ($row = $result->fetch_array()) {

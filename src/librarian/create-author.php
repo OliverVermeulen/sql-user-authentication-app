@@ -8,35 +8,35 @@ $author_name_err = $author_age_err = $book_genre_err = "";
 
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate book_name
+    // Validate author_name
     $input_author_name = trim($_POST["author_name"]);
     if (empty($input_author_name)) {
-        $author_name_err = "Please enter a name.";
+        $author_name_err = "Please enter a name";
     } else {
         $author_name = $input_author_name;
     }
 
-    // Validate book_name
+    // Validate author_age
     $input_author_age = trim($_POST["author_age"]);
     if (empty($input_author_age)) {
-        $author_age_err = "Please enter a name.";
+        $author_age_err = "Please enter a age";
     } else {
         $author_age = $input_author_age;
     }
 
-    // Validate book_name
+    // Validate author_genre
     $input_author_genre = trim($_POST["author_genre"]);
     if (empty($input_author_genre)) {
-        $author_genre_err = "Please enter a name.";
+        $author_genre_err = "Please enter a genre";
     } else {
         $author_genre = $input_author_genre;
     }
 
-    // Check input errors before inserting in database
+    // Check input errors before inserting into table
     if (empty($author_name_err) && empty($author_age_err) && empty($book_genre_err)) {
         // Prepare an insert statement
         $query = "INSERT INTO authors(author_name, author_age, author_genre) VALUES ('$author_name','$author_age','$author_genre')";
-        // Inserts into books table
+        // Inserts into authors table
         $result = mysqli_query($link, $query);
         // redirects user to home page
         header("location: librarian-dashboard.php");
