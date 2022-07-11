@@ -97,8 +97,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td class='action-list'>";
-                                echo '<a href="/sql-user-authentication-app/src/librarian/read-author.php?id=' . $row['author_id'] . '" class="mr-3" title="View Author Details" ><span class="fa fa-user"></span></a>';
-                                echo '<a href="/sql-user-authentication-app/src/librarian/librarian-read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Book Details" ><span class="fa fa-book"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/librarian-view-author.php?id=' . $row['author_id'] . '" class="mr-3" title="View Author Details" ><span class="fa fa-user"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/librarian/librarian-view-book.php?id=' . $row['book_id'] . '" class="mr-3" title="View Book Details" ><span class="fa fa-book"></span></a>';
                                 echo '<a href="/sql-user-authentication-app/src/librarian/update.php?id=' . $row['book_id'] . '" class="mr-3" title="Update Information" ><span class="fa fa-pencil"></span></a>';
                                 echo '<a href="/sql-user-authentication-app/src/librarian/delete.php?id=' . $row['book_id'] . '" title="Delete Information" ><span class="fa fa-trash"></span></a>';
                                 echo "</td>";

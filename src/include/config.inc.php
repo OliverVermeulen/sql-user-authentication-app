@@ -1,9 +1,9 @@
 <?php
 /* Database credentials. */
-define('DB_SERVER', 'localhost:3306');
+define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'library');
+define('DB_PASSWORD', ''); // Input own credentials
+define('DB_NAME', 'library'); // Database used's name is library
  
 /* Attempt to connect to MySQL database */
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
