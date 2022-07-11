@@ -77,6 +77,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                             echo "<th>Release Year</th>";
                             echo "<th>Book Genre</th>";
                             echo "<th>Age Group</th>";
+                            echo "<th>Author</th>";
                             echo "<th>Action</th>";
                             echo "</tr>";
                             echo "</thead>";
@@ -86,6 +87,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 echo "<td>" . $row['book_name'] . "</td>";
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";
+                                echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td class='action-list'>";
                                 echo '<a href="/sql-user-authentication-app/src/librarian/librarian-read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
