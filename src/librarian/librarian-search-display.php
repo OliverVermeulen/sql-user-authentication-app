@@ -42,7 +42,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     $sql = "SELECT * FROM books";
                     if ($result = $link->query($sql)) {
                         $search = $_REQUEST["search"];
-                        $query = "SELECT * from books where book_name like '%$search%'"; //search with a book name in the table book_info
+                        $query = "SELECT * from books where book_name like '%$search%' OR release_year like '%$search%' OR book_genre like '%$search%' OR age_group like '%$search%'"; //search books table by given parameter
                         $result = mysqli_query($link,$query);   
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';

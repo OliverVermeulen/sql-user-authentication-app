@@ -36,7 +36,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 <div class="col-md-12">
                     <div class="mb-3 clearfix">
                         <div class="librarian-dashboard-actions">
-                            <a href="create.php" class="btn btn-secondary pull-right mb-3"><i class="fa fa-plus"></i> Add New Employee</a>
+                            <div>
+                                <a href="create.php" class="btn btn-primary pull-right mb-3"><i class="fa fa-plus"></i> Add New Book</a>
+                                <a href="create-author.php" class="btn btn-secondary pull-right mb-3"><i class="fa fa-plus"></i> Add New Author</a>
+                            </div>
                             <form action="/sql-user-authentication-app/src/librarian/librarian-search-display.php" method="get" class="row g-2">
                                 <div class="col-auto">
                                     <input type="text" name="search" class="form-control" placeholder="Search" title="Search">

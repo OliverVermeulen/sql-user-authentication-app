@@ -7,10 +7,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: /sql-user-authentication-app/src/pages/login.php");
     exit;
 }
-// Checks if user is logged in as a librarian and redirects them to the librarian control panel
-if ($_SESSION["username"] == "Librarian") {
-    header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
-}
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +41,12 @@ if ($_SESSION["username"] == "Librarian") {
                     $sql = "SELECT * FROM books";
                     if ($result = $link->query($sql)) {
                         $search = $_REQUEST["search"];
-                        $query = "SELECT * from books where book_name like '%$search%'"; //search with a book name in the table book_info
-                        $result = mysqli_query($link,$query);                      
+                        $query = "SELECT * from books where book_name like '%$search%' OR release_year like '%$search%' OR book_genre like '%$search%' OR age_group like '%$search%'"; //search books table by given parameter
+                        $result = mysqli_query($link, $query);
                         if ($result->num_rows > 0) {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
                             echo "<tr>";
-                            // echo "<th>#</th>";
                             echo "<th>Book Name</th>";
                             echo "<th>Release Year</th>";
                             echo "<th>Book Genre</th>";
@@ -62,7 +57,6 @@ if ($_SESSION["username"] == "Librarian") {
                             echo "<tbody>";
                             while ($row = $result->fetch_array()) {
                                 echo "<tr>";
-                                // echo "<td>" . $row['book_id'] . "</td>";
                                 echo "<td>" . $row['book_name'] . "</td>";
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";

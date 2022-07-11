@@ -73,7 +73,6 @@ if ($_SESSION["username"] == "Librarian") {
                             echo '<table class="table table-bordered table-striped">';
                             echo "<thead>";
                             echo "<tr>";
-                            // echo "<th>#</th>";
                             echo "<th>Book Name</th>";
                             echo "<th>Release Year</th>";
                             echo "<th>Book Genre</th>";
@@ -84,7 +83,6 @@ if ($_SESSION["username"] == "Librarian") {
                             echo "<tbody>";
                             while ($row = $result->fetch_array()) {
                                 echo "<tr>";
-                                // echo "<td>" . $row['book_id'] . "</td>";
                                 echo "<td>" . $row['book_name'] . "</td>";
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";
