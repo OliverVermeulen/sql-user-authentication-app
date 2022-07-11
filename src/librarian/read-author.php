@@ -5,7 +5,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM books WHERE book_id = ?";
+    $sql = "SELECT * FROM authors WHERE author_id = ?";
 
     if ($stmt = $link->prepare($sql)) {
         // Bind variables to the prepared statement as parameters
@@ -24,10 +24,9 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $row = $result->fetch_array(MYSQLI_ASSOC);
 
                 // Retrieve individual field value
-                $book_name = $row["book_name"];
-                $release_year = $row["release_year"];
-                $book_genre = $row["book_genre"];
-                $age_group = $row["age_group"];
+                $author_name = $row["author_name"];
+                $author_age = $row["author_age"];
+                $author_genre = $row["author_genre"];
             } else {
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -58,7 +57,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The aim of this project is to make a OOP based booking app in PHP">
-    <title>Add new book</title>
+    <title>Book Details</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/sql-user-authentication-app/src/css/style.css">
     <link rel="shortcut icon" href="/sql-user-authentication-app/src/images/icon.png" type="image/x-icon">
@@ -72,22 +71,18 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="mb-3">View Record</h1>
+                    <h1 class="mb-3">Book details</h1>
                     <div class="form-group">
                         <label>Book Name</label>
-                        <p><b><?php echo $row["book_name"]; ?></b></p>
+                        <p><b><?php echo $row["author_name"]; ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Release Year</label>
-                        <p><b><?php echo $row["release_year"]; ?></b></p>
+                        <p><b><?php echo $row["author_age"]; ?></b></p>
                     </div>
                     <div class="form-group">
                         <label>Book Genre</label>
-                        <p><b><?php echo $row["book_genre"]; ?></b></p>
-                    </div>
-                    <div class="form-group">
-                        <label>Age Group</label>
-                        <p><b><?php echo $row["age_group"]; ?></b></p>
+                        <p><b><?php echo $row["author_genre"]; ?></b></p>
                     </div>
                     <p><a href="librarian-dashboard.php" class="btn btn-primary">Back</a></p>
                 </div>

@@ -89,7 +89,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         <label>Age Group</label>
                         <p><b><?php echo $row["age_group"]; ?></b></p>
                     </div>
-                    <p><a href="index.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="/sql-user-authentication-app/index.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>
         </div>
