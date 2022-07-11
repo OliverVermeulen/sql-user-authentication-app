@@ -108,6 +108,10 @@ main .btn-primary:hover{
   color: blue;
 }
 
+.container-fluid{
+  --bs-gutter-x: 0rem;
+}
+
 /* Footer */
 footer {
   display: flex;
@@ -180,3 +184,81 @@ a:hover {
   flex-direction: row;
   justify-content: space-between;
 }
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+  main {
+    padding: 10px;
+  }
+  .librarian-dashboard-actions {
+    flex-direction: column;
+    justify-content: space-between;
+}
+  .action-list {
+    flex-direction: column;
+  }
+  footer {
+    padding: 10px;
+    flex-direction: row;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  header {
+    padding: 10px;
+  }
+  /* main {
+    padding: 10px;
+  } */
+  .action-list {
+    flex-direction: column;
+  }
+  footer {
+    padding: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    padding: 10px 30px;
+  }
+  main {
+    padding: 10px 30px;
+  }
+  footer {
+    padding: 10px 30px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1280px) {
+  header {
+    padding: 10px 50px;
+  }
+  main {
+    padding: 10px 50px;
+  }
+  footer {
+    padding: 10px 50px;
+  }
+}
+@media (min-width: 1281px) and (max-width: 1899px) {
+  header {
+    padding: 10px 100px;
+  }
+  main {
+    padding: 10px 100px;
+  }
+  footer {
+    padding: 10px 100px;
+  }
+}
+/* @media (min-width: 1900px) {
+  header {
+    padding: 10px 200px;
+  }
+  main {
+    padding: 10px;
+  }
+  footer {
+    padding: 10px 200px;
+  }
+} */

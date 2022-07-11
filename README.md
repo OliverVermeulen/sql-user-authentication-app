@@ -35,8 +35,6 @@ The aim of this project is to make a user authentication and library management 
 - A dedicated Admin/Librarian sign in form
 - A live/real time search bar
 
-## Links
-
-### Repo link
+## Repo Link
 
 https://github.com/OliverVermeulen/sql-user-authentication-app.git
