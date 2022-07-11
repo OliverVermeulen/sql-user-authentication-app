@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
+    header("location: /sql-user-authentication-app/src/librarian/librarian-index.php");
     exit;
 }
 
@@ -16,4 +16,4 @@ $sql = "SELECT * FROM librarians WHERE username = librarian";
 
 $_SESSION["loggedin"] = true;
 $_SESSION["username"] = "Librarian";
-header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
+header("location: /sql-user-authentication-app/src/librarian/librarian-index.php");

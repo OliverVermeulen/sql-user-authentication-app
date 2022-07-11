@@ -48,7 +48,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $query = "UPDATE `books` SET `book_name` = '$book_name', `release_year` = '$release_year', `book_genre` = '$book_genre', `age_group` = '$age_group' WHERE `books`.`book_id` = $id";
         $result = mysqli_query($link, $query);
         // redirects user to home page
-        header("location: librarian-dashboard.php");
+        header("location: librarian-index.php");
     }
 
     // Close connection
@@ -149,7 +149,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>" />
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="librarian-dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="librarian-index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>

@@ -4,12 +4,12 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: /sql-user-authentication-app/src/user/login.php");
+    header("location: /sql-user-authentication-app/src/pages/login.php");
     exit;
 }
 // Checks if user is logged in as a librarian and redirects them to the librarian control panel
 if ($_SESSION["username"] == "Librarian") {
-    header("location: /sql-user-authentication-app/src/librarian/librarian-dashboard.php");
+    header("location: /sql-user-authentication-app/src/librarian/librarian-index.php");
 }
 ?>
 
@@ -38,9 +38,9 @@ if ($_SESSION["username"] == "Librarian") {
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="librarian-dashboard-actions">
+                    <div class="librarian-index-actions">
                         <!-- Search Bar -->
-                        <form action="/sql-user-authentication-app/src/user/search-display.php" method="get" class="row g-2">
+                        <form action="/sql-user-authentication-app/src/user/user-search-display.php" method="get" class="row g-2">
                             <div class="col-auto">
                                 <input type="text" name="search" class="form-control" placeholder="Search" title="Search by Books">
                             </div>

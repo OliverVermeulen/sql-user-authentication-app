@@ -73,16 +73,16 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 <div class="col-md-12">
                     <h1 class="mb-3">Book details</h1>
                     <div class="form-group">
-                        <label>Author Name</label>
-                        <p><b><?php echo $row["author_name"]; ?></b></p>
+                        <h6>Author Name</h6>
+                        <p><?= $row["author_name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Author Age</label>
-                        <p><b><?php echo $row["author_age"]; ?></b></p>
+                        <h6>Author Age</h6>
+                        <p><?= $row["author_age"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <label>Author Genre</label>
-                        <p><b><?php echo $row["author_genre"]; ?></b></p>
+                        <h6>Author Genre</h6>
+                        <p><?= $row["author_genre"]; ?></p>
                     </div>
                     <p><a href="/sql-user-authentication-app/index.php" class="btn btn-primary">Back</a></p>
                 </div>

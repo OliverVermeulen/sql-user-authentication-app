@@ -73,7 +73,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.librarian-dashboard-actions  {
+.librarian-index-actions  {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -205,7 +205,7 @@ footer span {
   main {
     padding: 10px;
   }
-  .librarian-dashboard-actions {
+  .librarian-index-actions {
     flex-direction: column;
     justify-content: space-between;
 }

@@ -35,7 +35,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="mb-3 clearfix">
-                        <div class="librarian-dashboard-actions">
+                        <div class="librarian-index-actions">
                             <!-- Create new book/author -->
                             <div>
                                 <a href="create-book.php" class="btn btn-primary pull-right mb-3" title="Add new book"><i class="fa fa-plus"></i> Book</a>

@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Login">
                 </div>
-                <p>Don't have an account? <a href="/sql-user-authentication-app/src/user/register.php">Sign up now</a></p>
+                <p>Don't have an account? <a href="/sql-user-authentication-app/src/pages/register.php">Sign up now</a></p>
                 <p>Sign In as <a href="/sql-user-authentication-app/src/librarian/librarian-login.php">Admin</a></p>
             </form>
         </div>

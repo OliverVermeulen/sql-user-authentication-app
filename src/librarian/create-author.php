@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Inserts into authors table
         $result = mysqli_query($link, $query);
         // redirects user to home page
-        header("location: librarian-dashboard.php");
+        header("location: librarian-index.php");
     }
 
     // Close connection
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="text" name="author_genre" class="form-control" value="<?= $author_genre; ?>" required>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Submit">
-                        <a href="librarian-dashboard.php" class="btn btn-secondary ml-2">Cancel</a>
+                        <a href="librarian-index.php" class="btn btn-secondary ml-2">Cancel</a>
                     </form>
                 </div>
             </div>

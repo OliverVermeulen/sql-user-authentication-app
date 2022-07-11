@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_stmt_execute($stmt)) {
                 // Password updated successfully. Destroy the session, and redirect to login page
                 session_destroy();
-                header("location: /sql-user-authentication-app/src/include/login.php");
+                header("location: /sql-user-authentication-app/src/pages/login.php");
                 exit();
             } else {
                 echo "Oops! Something went wrong. Please try again later.";
