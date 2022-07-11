@@ -11,7 +11,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 // Include config file
 require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
-// 
+// Select librarian from table
 $sql = "SELECT * FROM librarians WHERE username = librarian";
 
 $_SESSION["loggedin"] = true;

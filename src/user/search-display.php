@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: /sql-user-authentication-app/src/pages/login.php");
+    header("location: /sql-user-authentication-app/src/user/login.php");
     exit;
 }
 ?>
@@ -62,8 +62,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
                                 echo "<td class='action-list'>";
-                                echo '<a href="/sql-user-authentication-app/src/pages/view-author.php?id=' . $row['author_id'] . '" class="mr-3" title="View Author Details" ><span class="fa fa-user"></span></a>';
-                                echo '<a href="/sql-user-authentication-app/src/pages/view-book.php?id=' . $row['book_id'] . '" class="mr-3" title="View Book Details" ><span class="fa fa-book"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/user/view-author.php?id=' . $row['author_id'] . '" class="mr-3" title="View Author Details" ><span class="fa fa-user"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/user/view-book.php?id=' . $row['book_id'] . '" class="mr-3" title="View Book Details" ><span class="fa fa-book"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }

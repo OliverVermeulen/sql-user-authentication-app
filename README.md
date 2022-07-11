@@ -26,9 +26,9 @@ The aim of this project is to make a user authentication and library management 
 
 ## Backlog
 
-- Add update function
-- Add search bar
-- Add sorting function
+- Add update function (complete)
+- Add search bar (complete)
+- Add sorting function (complete)
 
 ## Future Additions
 
