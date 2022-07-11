@@ -27,7 +27,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
-    <!-- Librarian Header Module -->
+    <!-- Include Header -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
     <main>
@@ -122,7 +122,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </div>
     </main>
 
-    <!-- Footer Module -->
+    <!-- Include Footer -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
 

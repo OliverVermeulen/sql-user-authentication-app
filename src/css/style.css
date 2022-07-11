@@ -14,6 +14,72 @@ body {
   color: #fff;
 }
 
+/* Sign In, Register and Change Password */
+.wrapper {
+  width: 360px;
+  padding: 10px 20px;
+  margin: auto;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px rgb(212 212 212);
+  margin-top: 2rem;
+}
+.wrapper .invalid-feedback {
+  display: none;
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+.wrapper p {
+  margin-bottom: 10px;
+}
+.wrapper .btn-primary {
+  background-color: #ff1c30;
+  --bs-btn-focus-shadow-rgb: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.wrapper .btn-primary:hover {
+  background-color: #ff5261;
+}
+.wrapper .btn-secondary {
+  --bs-btn-focus-shadow-rgb: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+a {
+  color: #ff1c30;
+  text-decoration: none;
+}
+a:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
+.btn-link {
+  color: #ff1c30;
+  text-decoration: none;
+}
+.btn-link:hover {
+  color: #dc3545;
+  text-decoration: underline;
+}
+
+.librarian-dashboard-actions  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
 /* Header */
 header {
   display: flex;
@@ -91,6 +157,12 @@ main {
 .table {
   margin-bottom: 0;
 }
+main .mb-3 {
+  margin-bottom: 0.5rem!important;
+}
+.container-fluid{
+  --bs-gutter-x: 0rem;
+}
 main .btn-primary{
   background-color: #ff1c30;
   border: none;
@@ -99,21 +171,17 @@ main .btn-primary{
 main .btn-primary:hover{
   background-color: #ff5261;
 }
-.fa-trash {
+main .fa-trash {
   color: red;
 }
-.fa-pencil {
+main .fa-pencil {
   color: green;
 }
-.fa-book {
+main .fa-book {
   color: blue;
 }
-.fa-user {
+main .fa-user {
   color: orange;
-}
-
-.container-fluid{
-  --bs-gutter-x: 0rem;
 }
 
 /* Footer */
@@ -129,71 +197,7 @@ footer span {
   color: #ff1c30;
 }
 
-/* Sign In, Register and Change Password */
-.wrapper {
-  width: 360px;
-  padding: 10px 20px;
-  margin: auto;
-  border: 1px solid lightgray;
-  border-radius: 20px;
-  box-shadow: 2px 2px 5px rgb(212 212 212);
-  margin-top: 2rem;
-}
-.wrapper .invalid-feedback {
-  display: none;
-  width: 100%;
-  margin-top: 0.25rem;
-  font-size: 80%;
-  color: #dc3545;
-}
-.wrapper p {
-  margin-bottom: 10px;
-}
-.wrapper .btn-primary {
-  background-color: #ff1c30;
-  --bs-btn-focus-shadow-rgb: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.wrapper .btn-primary:hover {
-  background-color: #ff5261;
-}
-.wrapper .btn-secondary {
-  --bs-btn-focus-shadow-rgb: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-a {
-  color: #ff1c30;
-  text-decoration: none;
-}
-a:hover {
-  color: #dc3545;
-  text-decoration: underline;
-}
-.btn-link {
-  color: #ff1c30;
-  text-decoration: none;
-}
-.btn-link:hover {
-  color: #dc3545;
-  text-decoration: underline;
-}
-
-.librarian-dashboard-actions  {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
+/* Media Queries */
 @media (max-width: 480px) {
   header {
     padding: 10px;
@@ -217,9 +221,6 @@ a:hover {
   header {
     padding: 10px;
   }
-  /* main {
-    padding: 10px;
-  } */
   .action-list {
     flex-direction: column;
   }
@@ -260,14 +261,3 @@ a:hover {
     padding: 10px 100px;
   }
 }
-/* @media (min-width: 1900px) {
-  header {
-    padding: 10px 200px;
-  }
-  main {
-    padding: 10px;
-  }
-  footer {
-    padding: 10px 200px;
-  }
-} */

@@ -31,6 +31,7 @@ if ($_SESSION["username"] == "Librarian") {
 </head>
 
 <body>
+    <!-- Include Header -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/header.inc.php"); ?>
 
     <main>
@@ -117,6 +118,7 @@ if ($_SESSION["username"] == "Librarian") {
         </div>
     </main>
 
+    <!-- Include Footer -->
     <?php include("/MAMP/htdocs/sql-user-authentication-app/src/include/footer.inc.php"); ?>
 </body>
 

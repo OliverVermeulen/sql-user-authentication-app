@@ -110,13 +110,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="wrapper">
             <h2>Sign In</h2>
             <p>Please fill in your credentials</p>
-
             <?php
             if (!empty($login_err)) {
                 echo '<div class="alert alert-danger">' . $login_err . '</div>';
             }
             ?>
-
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label>Username</label>
