@@ -5,7 +5,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
     require_once "/MAMP/htdocs/sql-user-authentication-app/src/include/config.inc.php";
 
     // Prepare a select statement
-    $sql = "SELECT * FROM books WHERE book_id = ?";
+    $sql = "SELECT * FROM authors WHERE author_id = ?";
 
     if ($stmt = $link->prepare($sql)) {
         // Bind variables to the prepared statement as parameters
@@ -24,10 +24,9 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $row = $result->fetch_array(MYSQLI_ASSOC);
 
                 // Retrieve individual field value
-                $book_name = $row["book_name"];
-                $release_year = $row["release_year"];
-                $book_genre = $row["book_genre"];
-                $age_group = $row["age_group"];
+                $author_name = $row["author_name"];
+                $author_age = $row["author_age"];
+                $author_genre = $row["author_genre"];
             } else {
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -74,22 +73,18 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 <div class="col-md-12">
                     <h1 class="mb-3">Book details</h1>
                     <div class="form-group">
-                        <label>Book Name</label>
-                        <p><b><?php echo $row["book_name"]; ?></b></p>
+                        <label>Author Name</label>
+                        <p><b><?php echo $row["author_name"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Release Year</label>
-                        <p><b><?php echo $row["release_year"]; ?></b></p>
+                        <label>Author Age</label>
+                        <p><b><?php echo $row["author_age"]; ?></b></p>
                     </div>
                     <div class="form-group">
-                        <label>Book Genre</label>
-                        <p><b><?php echo $row["book_genre"]; ?></b></p>
+                        <label>Author Genre</label>
+                        <p><b><?php echo $row["author_genre"]; ?></b></p>
                     </div>
-                    <div class="form-group">
-                        <label>Age Group</label>
-                        <p><b><?php echo $row["age_group"]; ?></b></p>
-                    </div>
-                    <p><a href="librarian-dashboard.php" class="btn btn-primary">Back</a></p>
+                    <p><a href="/sql-user-authentication-app/index.php" class="btn btn-primary">Back</a></p>
                 </div>
             </div>
         </div>

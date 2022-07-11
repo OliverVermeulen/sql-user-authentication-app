@@ -104,8 +104,11 @@ main .btn-primary:hover{
 .fa-pencil {
   color: green;
 }
-.fa-eye {
+.fa-book {
   color: blue;
+}
+.fa-user {
+  color: orange;
 }
 
 .container-fluid{

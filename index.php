@@ -39,7 +39,7 @@ if ($_SESSION["username"] == "Librarian") {
                 <div class="col-md-12">
                     <div class="librarian-dashboard-actions">
                         <!-- Search Bar -->
-                        <form action="/sql-user-authentication-app/src/pages/display.php" method="get" class="row g-2">
+                        <form action="/sql-user-authentication-app/src/pages/search-display.php" method="get" class="row g-2">
                             <div class="col-auto">
                                 <input type="text" name="search" class="form-control" placeholder="Search" title="Search">
                             </div>
@@ -48,7 +48,7 @@ if ($_SESSION["username"] == "Librarian") {
                             </div>
                         </form>
                         <!-- Filter Dropdown -->
-                        <?= "<form action='/sql-user-authentication-app/src/pages/sort.php' method='post' class='row g-2'>
+                        <?= "<form action='/sql-user-authentication-app/src/pages/sort-table.php' method='post' class='row g-2'>
                                 <div class='col-auto'>
                                     <select class='form-control' name='yeet'>
                                     <option value='alphabet'>Alphabet</option>
@@ -87,8 +87,9 @@ if ($_SESSION["username"] == "Librarian") {
                                 echo "<td>" . $row['release_year'] . "</td>";
                                 echo "<td>" . $row['book_genre'] . "</td>";
                                 echo "<td>" . $row['age_group'] . "</td>";
-                                echo "<td>";
-                                echo '<a href="/sql-user-authentication-app/src/pages/read.php?id=' . $row['book_id'] . '" class="mr-3" title="View Record" data-toggle="tooltip"><span class="fa fa-eye"></span></a>';
+                                echo "<td class='action-list'>";
+                                echo '<a href="/sql-user-authentication-app/src/pages/view-author.php?id=' . $row['author_id'] . '" class="mr-3" title="View Author Details" ><span class="fa fa-user"></span></a>';
+                                echo '<a href="/sql-user-authentication-app/src/pages/view-book.php?id=' . $row['book_id'] . '" class="mr-3" title="View Book Details" ><span class="fa fa-book"></span></a>';
                                 echo "</td>";
                                 echo "</tr>";
                             }
