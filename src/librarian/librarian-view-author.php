@@ -27,6 +27,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 $author_name = $row["author_name"];
                 $author_age = $row["author_age"];
                 $author_genre = $row["author_genre"];
+                $author_id = $row["author_id"];
             } else {
                 // URL doesn't contain valid id parameter. Redirect to error page
                 header("location: error.php");
@@ -84,7 +85,10 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         <h5>Author genre</h5>
                         <p><?= $row["author_genre"]; ?></p>
                     </div>
-                    <p><a href="librarian-index.php" class="btn btn-primary">Back</a></p>
+                    <div class="form-group">
+                    <a href="librarian-index.php" class="btn btn-primary">Back</a>
+                    <?='<a href="/sql-user-authentication-app/src/librarian/update-author.php?id=' . $row['author_id'] . '" class="btn btn-secondary ml-2" title="View Author Details" >Update</a>'; ?>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,14 +1,3 @@
-<?php
-// Initialize the session
-session_start();
-
-// Checks if the user is logged in, if not it redirects them to the login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: location: /sql-user-authentication-app/src/user/login.php");
-    exit;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
