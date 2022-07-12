@@ -74,19 +74,19 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                 <div class="col-md-12">
                     <h1 class="mb-3">Book details</h1>
                     <div class="form-group">
-                        <h5>Book Name</h5>
+                        <h5>Book name</h5>
                         <p><?= $row["book_name"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <h5>Release Year</h5>
+                        <h5>Release year</h5>
                         <p><?= $row["release_year"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <h5>Book Genre</h5>
+                        <h5>Book genre</h5>
                         <p><?= $row["book_genre"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <h5>Age Group</h5>
+                        <h5>Age group</h5>
                         <p><?= $row["age_group"]; ?></p>
                     </div>
                     <p><a href="librarian-index.php" class="btn btn-primary">Back</a></p>

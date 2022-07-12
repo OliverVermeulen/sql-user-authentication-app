@@ -2,7 +2,7 @@
 /* Database credentials. */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', ''); // Input own credentials
+define('DB_PASSWORD', 'root'); // Input own credentials
 define('DB_NAME', 'library'); // Database used's name is library
  
 /* Attempt to connect to MySQL database */

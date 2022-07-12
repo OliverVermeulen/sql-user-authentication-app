@@ -42,10 +42,13 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
         $age_group = $input_age_group;
     }
 
+    // Get selected author
+    $author_id = $_POST["author_id"];
+
     // Check input errors before inserting in database
     if (empty($book_name_err) && empty($release_year_err) && empty($book_genre_err) && empty($book_genre_err) && empty($age_group_err)) {
         // Prepare an update statement
-        $query = "UPDATE `books` SET `book_name` = '$book_name', `release_year` = '$release_year', `book_genre` = '$book_genre', `age_group` = '$age_group' WHERE `books`.`book_id` = $id";
+        $query = "UPDATE `books` SET `book_name` = '$book_name', `release_year` = '$release_year', `book_genre` = '$book_genre', `age_group` = '$age_group', `author_id` = '$author_id' WHERE `books`.`book_id` = $id";
         $result = mysqli_query($link, $query);
         // redirects user to home page
         header("location: librarian-index.php");
@@ -82,7 +85,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                     $release_year = $row["release_year"];
                     $book_genre = $row["book_genre"];
                     $age_group = $row["age_group"];
-                    // $salary = $row["book_genre"];
+                    $author_id = $row["author_id"];
                 } else {
                     // URL doesn't contain valid id. Redirect to error page
                     header("location: error.php");
@@ -92,12 +95,6 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
-
-        // Close statement
-        $stmt->close();
-
-        // Close connection
-        $link->close();
     } else {
         // URL doesn't contain id parameter. Redirect to error page
         header("location: error.php");
@@ -146,6 +143,25 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                         <div class="form-group">
                             <label>Age Group</label>
                             <input type="text" name="age_group" class="form-control" value="<?= $age_group; ?>" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Author</label>
+                            <select name="author_id" class="form-control" required>
+                                <?php
+                                // Loops through authors table to get author name
+                                $sql = "SELECT * FROM authors";
+                                if ($result = $link->query($sql)) {
+                                    while ($row = $result->fetch_array()) {
+                                        echo "<option value='$row[author_id]'>" . $row['author_name'] . "</option>";
+                                    }
+                                    $result->free();
+                                }
+                                // Close statement
+                                $stmt->close();
+
+                                // Close connection
+                                $link->close(); ?>
+                            </select>
                         </div>
                         <input type="hidden" name="id" value="<?php echo $id; ?>" />
                         <input type="submit" class="btn btn-primary" value="Submit">
