@@ -15,7 +15,6 @@ The aim of this project is to make a user authentication and library management 
     + The ability to Update information of books and authors
     + The ability to Delete books and authors
 
-
 ## MVP
 
 - A Sign In, Sign Up, Update Password and Sign Out pages/functions
@@ -34,7 +33,7 @@ The aim of this project is to make a user authentication and library management 
 
 - A dedicated Admin/Librarian sign in form
 - A live/real time search bar
-- More CRUD operations for authors table
+- More CRUD operations for tables
 
 ## Repo Link
 
