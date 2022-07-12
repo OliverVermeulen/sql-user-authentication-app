@@ -90,7 +90,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         <p><?= $row["age_group"]; ?></p>
                     </div>
                     <div class="form-group">
-                        <?= '<a href="/sql-user-authentication-app/src/librarian/update.php?id=' . $row['book_id'] . '" class="btn btn-primary ml-2" title="Update book details" ><i class="fa fa-pencil"></i> Update</a>'; ?>
+                        <?= '<a href="/sql-user-authentication-app/src/librarian/update-book.php?id=' . $row['book_id'] . '" class="btn btn-primary ml-2" title="Update book details" ><i class="fa fa-pencil"></i> Update</a>'; ?>
                         <a href="librarian-index.php" class="btn btn-secondary" title="Cancel">Cancel</a>
                     </div>
                 </div>
