@@ -86,8 +86,8 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
                         <p><?= $row["author_genre"]; ?></p>
                     </div>
                     <div class="form-group">
-                    <a href="librarian-index.php" class="btn btn-primary">Back</a>
-                    <?='<a href="/sql-user-authentication-app/src/librarian/update-author.php?id=' . $row['author_id'] . '" class="btn btn-secondary ml-2" title="View Author Details" >Update</a>'; ?>
+                    <?='<a href="/sql-user-authentication-app/src/librarian/update-author.php?id=' . $row['author_id'] . '" class="btn btn-primary ml-2" title="Update author details" ><i class="fa fa-pencil"></i> Update</a>'; ?>    
+                    <a href="librarian-index.php" class="btn btn-secondary" title="Cancel">Cancel</a>
                     </div>
                 </div>
             </div>

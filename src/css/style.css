@@ -174,14 +174,11 @@ main .btn-primary:hover{
 main .fa-trash {
   color: red;
 }
-main .fa-pencil {
-  color: green;
-}
 main .fa-book {
   color: blue;
 }
 main .fa-user {
-  color: orange;
+  color: green;
 }
 
 /* Footer */
